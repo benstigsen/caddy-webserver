@@ -1,0 +1,18 @@
+(common) {
+  templates
+  file_server {
+    hide .git
+  }
+
+  try_files {path} _templates/page.html
+}
+
+a.site {
+  root /var/www/a.site
+  import common
+}
+
+b.site {
+  root /var/www/b.site
+  import common
+}

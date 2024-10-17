@@ -1,0 +1,15 @@
+<head>
+  <!-- {{ $meta := index .Args 0 }} -->
+  <title>{{ or $meta.title "No title" }}</title>
+
+  <!-- {{ if $meta.description }} -->
+  <meta name="description" content="{{ $meta.description }}" />
+  <!-- {{ end }} -->
+
+  <meta charset="UTF-8" />
+  <!--<meta name="author" content="Author name here">-->
+  <meta name="keywords" content="{{ $meta.keywords }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>

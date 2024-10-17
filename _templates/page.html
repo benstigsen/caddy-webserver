@@ -1,0 +1,13 @@
+<!--
+{{ if not (fileExists (print .OriginalReq.URL.Path "/index.md") )}} {{ httpError 404 }} {{ end }}
+{{ $file := print .OriginalReq.URL.Path "/index.md" }}
+{{ $content := splitFrontMatter ( readFile $file ) }} {{ import $file }}
+-->
+
+<!doctype html>
+<html>
+  {{ include "_templates/head.html" $content.Meta }}
+  <body>
+    {{ markdown $content.Body }}
+  </body>
+</html>
